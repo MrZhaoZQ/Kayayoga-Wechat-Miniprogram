@@ -1,0 +1,70 @@
+<!--pages/evtDetail/evtDetail.wxml-->
+<view class="container">
+  <view class="kvBox">
+    <image class="kvImg" src="{{evtInfo.banner}}" mode="widthFix"></image>
+    <view class="kvCbox">
+      <image src="../../imgs/live_c.png"></image>
+      <view>{{evtInfo.totalUser}}人 已购买预约</view>
+    </view>
+    <view class="evtTips">
+      <view class="countdown" style="display: {{evtState==''?'flex':'none'}}">
+        <text>{{countdown.days}}</text>天
+        <text>{{countdown.hours}}</text>小时
+        <text>{{countdown.mins}}</text>分钟
+      </view>
+      <view class="timer" hidden="{{evtState!='started'}}">直播已开始<text>{{countdown.hours+":"+countdown.mins}}</text></view>
+      <view class="ended" hidden="{{evtState!='ended'}}">直播已结束</view>
+    </view>
+  </view>
+  <view class="subtitle">
+    <view class="leftTxt"><view class="line"></view>{{evtInfo.name}}</view>
+    <view class="evtPriceBox" hidden="{{evtInfo.isPurchase}}">
+      <image src="../../imgs/price.png"></image>
+      <view>￥{{evtInfo.price}}</view>
+    </view>
+    <image class="evtBtn" bindtap="subscribeFn" hidden="{{!evtInfo.isPurchase}}" src="../../imgs/txw.png"></image>
+  </view>
+  <view class="evtTxt">
+    <text>{{evtInfo.describe_content}}</text>
+  </view>
+  <view class="masterInfo" bindtap="toMasterFn">
+    <image class="masterAvatar" src="{{mInfo.avatar}}"></image>
+    <view class="master">
+      <view class="masterName">{{mInfo.name}}<image mode="widthFix" src="../../imgs/arr_right.png"></image></view>
+      <text class="masterTag">{{mInfo.title}}</text>
+    </view>
+  </view>
+  <view class="masterTxt">
+    <view class="cont">
+      <text class="intro">{{mInfo.introduce_content}}</text>
+      <text class="more" bindtap="toMasterFn">更多 +</text>
+    </view>
+  </view>
+
+  <view class="fixedBtm">
+    <view class="navBox">
+      <image bindtap="toHomeFn" src="../../imgs/ihome.png"></image>
+      <image bindtap="likeFn" src="{{evtInfo.isLike?'../../imgs/ilike1.png':'../../imgs/ilike0.png'}}"></image>
+      <image bindtap="showSharePopupFn" src="../../imgs/ishare.png"></image>
+    </view>
+    <image class="btmBtn" bindtap="btnBtnFn" src="../../imgs/{{btnSrc}}.png"></image>
+  </view>
+
+  <view class="sharePopup" hidden="{{!showSharePopup}}" capture-bind:tap="hideSharePopupFn">
+    <view class="shareBtns">
+      <button open-type="share">分享给朋友</button>
+      <view bindtap="showPosterFn">保存二维码图片</view>
+      <view class="cancel" bindtap="hideSharePopupFn">取消</view>
+    </view>
+  </view>
+
+  <view class="posterPopup" hidden="{{!showPoster}}">
+    <image class="close" bindtap="hidePosterFn" src="../../imgs/close.svg"></image>
+    <view class="canvasBox">
+      <canvas id="poster" canvas-id="poster" bindlongpress='save2AlbumFn'></canvas>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义组件authorize -->
+<authorize bind:myevent="onMyEvent" authorize-hidden="{{is_authorize_hidden}}" from-page="{{page_name}}" />

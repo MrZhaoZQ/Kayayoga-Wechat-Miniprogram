@@ -1,0 +1,64 @@
+<!--pages/masterDetail/masterDetail.wxml-->
+<view class="container">
+  <view class="infoBox">
+    <image src="{{masterInfo.avatar}}"></image>
+    <text class="masterName">{{masterInfo.name}}</text>
+    <text class="masterTag">{{masterInfo.title?masterInfo.title:''}}</text>
+    <text class="masterSkill">{{item.specialty}}</text>
+    <text class="masterFans">{{masterInfo.count_like}}粉丝</text>
+    <view class="masterTxt">
+      <text>{{masterInfo.introduce_content}}</text>
+    </view>
+  </view>
+  <view class="subtitle" style="display:{{liveEvtlist.length>0?'flex':'none'}}">
+    <view class="leftTxt"><view class="line"></view>{{masterInfo.name}}的直播</view>
+  </view>
+  <view class="liveEvtList">
+    <view class="liveEvtItem" wx:for="{{liveEvtlist}}" wx:key="index">
+      <image src="{{item.avatar}}"></image>
+      <view class="liveEvtInfoBox">
+        <view class="liveEvtTitle">{{item.name}}</view>
+        <view class="liveEvtDate">{{item.start_dt}}</view>
+        <view class="liveEvtTime">{{item.time}}</view>
+        <view class="btn" data-id="{{item.id}}" bindtap="toEvtDetailFn">立刻加入</view>
+      </view>
+    </view>
+  </view>
+  <view class="subtitle" hidden="{{released==0}}">
+    <view class="leftTxt"><view class="line"></view>{{masterInfo.name}}的视频</view>
+    <view class="rightTxt">视频：{{masterInfo.count_video}}</view>
+  </view>
+  <view class="videoList" hidden="{{released==0}}">
+    <view class="item" wx:for="{{videolist}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+      <view class="imgBox">
+        <image src="{{item.avatar}}"></image>
+        <view hidden="{{!item.longinfo}}">{{item.longinfo}}</view>
+      </view>
+      <text class="videoName">{{item.name}}</text>
+      <view class="like"><image src="../../imgs/like.png"></image>{{item.collection_count}}</view>
+    </view>
+  </view>
+
+  <view class="fixedBtm">
+    <view class="navBox">
+      <image bindtap="toHomeFn" src="../../imgs/ihome.png"></image>
+      <image bindtap="showSharePopupFn" src="../../imgs/ishare.png"></image>
+    </view>
+    <image class="followBtn" bindtap="followFn" src="{{masterInfo.liked==0?'../../imgs/follow.png':'../../imgs/followed.png'}}"></image>
+  </view>
+
+  <view class="sharePopup" hidden="{{!showSharePopup}}" capture-bind:tap="hideSharePopupFn">
+    <view class="shareBtns">
+      <button open-type="share">分享给朋友</button>
+      <view bindtap="showPosterFn">保存二维码图片</view>
+      <view class="cancel" bindtap="hideSharePopupFn">取消</view>
+    </view>
+  </view>
+
+  <view class="posterPopup" hidden="{{!showPoster}}">
+    <image class="close" bindtap="hidePosterFn" src="../../imgs/close.svg"></image>
+    <view class="canvasBox">
+      <canvas id="poster" canvas-id="poster" bindlongpress='save2AlbumFn'></canvas>
+    </view>
+  </view>
+</view>

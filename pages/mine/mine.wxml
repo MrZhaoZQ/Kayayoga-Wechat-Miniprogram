@@ -1,0 +1,39 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <view class="tabbars">
+    <view wx:for="{{tabbars}}" wx:key="index" id="{{index}}" class='{{activeIndex==index?"active":""}}' bindtap='tabbarFn'>{{item}}</view>
+  </view>
+  <view class="myList paidlist" hidden="{{activeIndex!=0}}">
+    <view class="myItem" wx:for="{{mylist[0]}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+      <view class="imgBox">
+        <image lazy-load="true" src="{{item.avatar}}"></image>
+        <view hidden="{{!item.longinfo}}">{{item.longinfo}}</view>
+      </view>
+      <view class="infoBox">
+        <text class="itemName">{{item.name}}</text>
+        <text class="itemDesc">{{item.describe_content}}</text>
+        <view class="like" data-i="{{index}}" catchtap="likeFn">
+          <image src="{{item.isLike?'../../imgs/liked.png':'../../imgs/like.png'}}"></image>{{item.like_count}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="myList colletedlist" hidden="{{activeIndex!=1}}">
+    <view class="myItem" wx:for="{{mylist[1]}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+      <view class="imgBox">
+        <image lazy-load="true" src="{{item.avatar}}"></image>
+        <view hidden="{{!item.longinfo}}">{{item.longinfo}}</view>
+      </view>
+      <view class="infoBox">
+        <text class="itemName">{{item.name}}</text>
+        <text class="itemDesc">{{item.describe_content}}</text>
+        <view class="like" data-i="{{index}}" catchtap="likeFn">
+          <image src="{{item.isLike?'../../imgs/liked.png':'../../imgs/like.png'}}"></image>{{item.like_count}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义组件authorize -->
+<authorize bind:myevent="onMyEvent" authorize-hidden="{{is_authorize_hidden}}" from-page="{{page_name}}" />

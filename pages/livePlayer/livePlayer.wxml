@@ -1,0 +1,55 @@
+<!--pages/livePlayer/livePlayer.wxml-->
+<view class="container">
+  <image class="backIcon" style="top: {{backTop?backTop:''}}px" src="../../imgs/live-back.svg" bindtap="backFn"></image>
+  <live-player id="myPalyer" src="{{liveUrl}}" mode="live" picture-in-picture-mode="{{pipmode}}" autoplay bindstatechange="statechange" bindenterpictureinpicture="enterPIPFn" binderror="error" />
+  <view class="layer">
+    <swiper class="mySwiper" style="height: {{}}" current="{{current}}" bindchange="mySwiperChangeFn">
+      <swiper-item></swiper-item>
+      <swiper-item>
+        <view class="head">
+          <view class="leftBox">
+            <image src="{{pusher.avatar}}"></image>
+            <view class="txtBox">
+              <text>{{pusher.name}}</text>
+              <!-- <text>瑜伽老师</text> -->
+            </view>
+          </view>
+          <view class="rightBox">
+            <scroll-view scroll-x="true" bindscrolltolower="getMoreViewerFn">
+              <view class="viewerList" style="width: {{viewers.length*68}}rpx; min-width: 340rpx;">
+                <view class="viewerItem" wx:for="{{viewers}}" wx:key="index">
+                  <image src="{{item.avatarUrl}}"></image>
+                  <!-- <text>{{item.num}}</text> -->
+                </view>
+              </view>
+            </scroll-view>
+            <view class="viewNum">{{viewers.length}}</view>
+          </view>
+        </view>
+        <!-- <view class="txtLayer"></view> -->
+        <scroll-view class="msgList" hidden="{{comments.length<1}}" scroll-y="true" scroll-top="{{scrollTop}}" scroll-with-animation="true" bindscrolltoupper="getMoreMsgFn">
+          <view class="msgItem" wx:for="{{comments}}" wx:key="index">
+            <image class="avatar" src="{{item.avatarUrl}}"></image>
+            <view class="msg" selectable="true"><text>{{item.nickname}}: </text>{{item.msg}}</view>
+          </view>
+        </scroll-view>
+        <view class="foot">
+          <view class="inputBox">
+            <open-data type="userAvatarUrl"></open-data>
+            <input type="text" value="{{msg}}" placeholder="说点什么..." placeholder-style="color: #d6d6d6;" bindinput="inputFn"></input>
+            <view bindtap="sendFn" class="sendBtn">发送</view>
+          </view>
+          <canvas hidden="{{hideCanvas}}" canvas-id="mycanvas" class="canvas" />
+          <image class="likeBtn" bindtap="tapLikeBtnFn" style="{{btnStyle}}" src="../../imgs/likelive.png"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+
+<view class="noPusher" hidden="{{playing && connecting}}">
+  <view class="popup">
+    <view class="liveIcon" bindtap="backFn"><view class="dot"></view>LIVE</view>
+    <image class="fallbackImg" src="https://api.maniyoga.fugumobile.cn/public/imgs/liveLoader.gif"></image>
+  </view>
+</view>

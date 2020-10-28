@@ -1,0 +1,45 @@
+/* components/authorize/authorize.wxss */
+.authorizeBox{
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; left: 0; top: 0;
+  z-index: 88;
+}
+.authorizeBox .content{
+  width: 626rpx; height: 826rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.authorizeBox .content .subtitle{
+  width: 100%; height: 120rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx #eee solid;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 120rpx;
+}
+.authorizeBox .content .desc{
+  margin: 30rpx 0 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.authorizeBox .content .tipImg{
+  width: 472rpx; height: 368rpx;
+}
+.authorizeBox .content .btn{
+  width: 466rpx; height: 80rpx;
+  margin-top: 50rpx;
+  padding: 0;
+  border: 0;
+  background: #5cc63e;
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 80rpx;
+}

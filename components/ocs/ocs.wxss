@@ -1,0 +1,11 @@
+/* components/ocs/ocs.wxss */
+.ocsBox{
+  width: 127rpx; height: 127rpx;
+  position: fixed; right: 0; bottom: 56rpx;
+  z-index: 666666;
+}
+.ocsBox .ocsBtn{
+  width: 127rpx; height: 127rpx;
+  background: url(https://athleticgreens.fugumobile.cn/imgs/service.png) no-repeat;
+  background-size: 100% 100%;
+}

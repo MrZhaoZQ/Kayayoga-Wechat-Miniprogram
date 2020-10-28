@@ -1,0 +1,134 @@
+/* pages/aboutus/aboutus.wxss */
+page{
+  background: #f4f4f4;
+}
+.container{
+  box-sizing: border-box;
+  padding: 66rpx 36rpx;
+}
+
+.kv{
+  width: 100%;
+  margin-bottom: 66rpx;
+}
+.content{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 18rpx;
+}
+
+.introduction{
+  width: 100%;
+  margin-bottom: 46rpx;
+}
+.introduction text{
+  line-height: 42rpx;
+}
+
+.addrList{
+  width: 100%;
+  margin-bottom: 56rpx;
+}
+.addrItem{
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.addrItem .itemName{
+  display: block;
+  width: 100%;
+  line-height: 56rpx;
+  font-weight: bolder;
+  color: #000;
+}
+.addrItem .itemInfo{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.addrItem .itemInfo .addrImg{
+  width: 19rpx; height: 23rpx;
+  margin: 15rpx 20rpx 12rpx 0;
+}
+.addrItem .itemInfo .telImg{
+  width: 23rpx; height: 23rpx;
+  margin: 15rpx 20rpx 12rpx 0;
+}
+.addrItem .itemInfo text{
+  line-height: 52rpx;
+}
+
+.form{
+  width: 100%;
+  margin-bottom: 60rpx;
+  box-sizing: border-box;
+  padding: 36rpx 42rpx;
+  background: #fff;
+}
+.form .subtitle{
+  width: 100%;
+  margin-bottom: 30rpx; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: bolder;
+}
+.form .subtitle .line{
+  width: 10rpx; height: 36rpx;
+  margin-right: 10rpx;
+  background: #17aebd;
+}
+.form .formItem{
+  width: 100%;
+  margin-bottom: 16rpx;
+}
+.formItem .itemName{
+  width: 100%; height: 46rpx;
+  text-indent: 16rpx;
+  line-height: 46rpx;
+}
+.formItem input, .formItem textarea{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f4f4f4;
+  font-size: 28rpx;
+}
+.formItem input{
+  height: 68rpx;
+  padding: 0 16rpx;
+  line-height: 68rpx;
+}
+.formItem textarea{
+  height: 182rpx;
+  padding: 16rpx;
+}
+.form .submit{
+  width: 280rpx; height: 70rpx;
+  margin: 60rpx auto 18rpx;
+  border-radius: 36rpx;
+  background: #17aebd;
+  font-weight: bolder;
+  text-align: center;
+  line-height: 70rpx;
+  color: #fff;
+}
+
+.footer{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 22rpx 46rpx;
+  border-top: 1rpx #000 solid;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.footer text{
+  margin-bottom: 10rpx;
+  text-align: right;
+}
+.footer .qrCode{
+  width: 150rpx; height: 150rpx;
+  margin-left: 16rpx;
+}

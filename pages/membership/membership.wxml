@@ -1,0 +1,51 @@
+<!--pages/membership/membership.wxml-->
+<view class="container">
+  <view class="tabbars">
+    <view wx:for="{{tabbars}}" wx:key="index" id="{{index}}" class='{{activeIndex==index?"active":""}}' bindtap='tabbarFn'>{{item}}</view>
+  </view>
+  <view class="vipList" hidden="{{activeIndex!=0}}">
+    <view class="vipItem" wx:for="{{mylist[0]}}" wx:key="index" data-id="{{item.id}}">
+      <view class="imgBox">
+        <image lazy-load="true" src="{{item.avatar}}"></image>
+      </view>
+      <view class="infoBox">
+        <!-- <text class="itemName"></text> -->
+        <text class="itemDesc">{{item.describe_content}}</text>
+        <view class="btmBox">
+          <view class="price">{{item.price}}</view>
+          <image src="../../imgs/cart.png" data-id="{{item.id}}" data-i="{{index}}" catchtap="clickCartFn"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="recordList" hidden="{{activeIndex!=1}}">
+    <view class="myacount">
+      <view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
+      <view class="acountInfo">
+        <view class="acount">账户余额：<text class="acountNum">￥{{myaccount}}</text></view>
+        <button hidden="{{phone!=''}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumberFn">绑定手机号</button>
+        <view class="phone" style="display: {{phone==''?'none':'flex'}}">手机号：<text>{{phone}}</text><button class="unbind" bindtap="unbindFn">解绑</button></view>
+      </view>
+    </view>
+    <view class="subtitle">
+      <view class="leftTxt"><view class="line"></view>订单历史记录</view>
+    </view>
+    <view class="recordItem" wx:for="{{mylist[1]}}" wx:key="index" data-id="{{item.id}}">
+      <view class="record">
+        <view class="imgBox">
+          <image lazy-load="true" src="{{item.avatar}}"></image>
+        </view>
+        <view class="infoBox">
+          <text class="desc">{{item.name}}</text>
+          <!-- <text class="desc">{{item.describe_content}}</text> -->
+          <view class="price">{{item.price}}</view>
+        </view>
+      </view>
+      <view class="itemDate">{{item.paysuccesstime}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义组件authorize -->
+<authorize bind:myevent="onMyEvent" authorize-hidden="{{is_authorize_hidden}}" from-page="{{page_name}}" />

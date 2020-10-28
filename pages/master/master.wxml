@@ -1,0 +1,25 @@
+<!--pages/master/master.wxml-->
+<view class="container">
+  <view class="masterList">
+    <view class="masterItem" wx:for="{{masters}}" wx:key="index" data-id="{{item.id}}" bindtap="toMDFn">
+      <view class="masterImg"><image lazy-load="true" src="{{item.avatar}}"></image></view>
+      <view class="masterInfo">
+        <view class="masterName">
+          <text>{{item.name}}</text>
+          <view class="newNums {{item.count_newvideo>0?'':'hideBox'}}">{{item.count_newvideo}}个新视频<view class="trangle"></view></view>
+        </view>
+        <view class="infoBox">
+          <view class="info">
+            <text class="masterSkill">{{item.specialty}}</text>
+            <text class="masterVideos">视频：{{item.count_video}}</text>
+            <text class="masterFans">粉丝：{{item.count_like}}</text>
+          </view>
+          <image data-id="{{index}}" class="btn" catchtap="followFn" src="{{item.liked==0?'../../imgs/follow.png':'../../imgs/followed.png'}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义组件authorize -->
+<authorize bind:myevent="onMyEvent" authorize-hidden="{{is_authorize_hidden}}" from-page="{{page_name}}" />

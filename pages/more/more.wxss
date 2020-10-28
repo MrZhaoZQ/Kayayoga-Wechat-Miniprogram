@@ -1,0 +1,121 @@
+/* pages/more/more.wxss */
+page{
+  background: #f4f4f4;
+}
+.container{
+  padding: 182rpx 0 68rpx;
+}
+.header{
+  width: 100%; height: 182rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed; left: 0; top: 0;
+  z-index: 26;
+}
+.header .logo{
+  width: 192rpx; height: auto;
+  margin-bottom: 30rpx;
+}
+.header .back{
+  width: 22rpx; height: 36rpx;
+  padding: 30rpx 42rpx;
+  position: absolute; left: 0; bottom: 8rpx;
+}
+
+.search{
+  width: 654rpx; height: 70rpx;
+  margin: 38rpx 48rpx 0rpx;
+  background: #fff;
+  border-radius: 48rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search image{
+  width: 42rpx; height: 42rpx;
+  padding: 0 30rpx;
+}
+
+.subtitle{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 68rpx 48rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subtitle .leftTxt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 48rpx;
+  font-weight: bolder;
+}
+.subtitle .leftTxt .line{
+  width: 10rpx; height: 52rpx;
+  margin-right: 10rpx;
+  background: #17aebd;
+}
+
+.moreList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+}
+.moreItem{
+  width: 100%;
+  padding: 66rpx 0;
+  border-bottom: 1rpx #a0a0a0 solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.moreItem .imgBox{
+  width: 280rpx; height: 280rpx;
+  margin-right: 30rpx;
+  position: relative; left: 0; top: 0;
+}
+.moreItem .imgBox image{
+  width: 280rpx; height: 280rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 6rpx #d4d4d4;
+}
+.moreItem .imgBox view{
+  width: 114rpx; height: 45rpx;
+  background: rgba(0,0,0,0.6);
+  border-radius: 26rpx;
+  position: absolute; right: 10rpx; bottom: 10rpx;
+  text-align: center;
+  line-height: 45rpx;
+  color: #fff;
+}
+.moreItem .infoBox{
+  flex: 1;
+  padding-top: 20rpx;
+}
+.moreItem .infoBox .itemName{
+  display: block;
+  margin-bottom: 16rpx;
+  font-weight: bolder;
+}
+.moreItem .infoBox .itemDesc{
+  display: block;
+  margin-bottom: 16rpx;
+  display:-webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+}
+.moreItem .infoBox .like{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.moreItem .infoBox .like image{
+  width: 42rpx; height: 42rpx;
+}

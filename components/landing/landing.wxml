@@ -1,0 +1,22 @@
+<!--components/landing/landing.wxml-->
+<view class='landing' hidden='{{landingHidden}}'>
+  <swiper class="theSwiper" 
+    duration="{{duration}}" 
+    current="{{current}}" 
+    easing-function="{{moveFn}}"
+    bindchange="swiperChangeFn">
+    <block wx:for="{{swiperlist}}" wx:key="index">
+      <swiper-item class="theSwiperItem">
+        <image class="itemImg" src="{{'https://api.maniyoga.fugumobile.cn/public'+item.image}}" />
+        <view class="layer"></view>
+        <text class="desc">{{item.description}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="enterBtn" bindtap="enterFn" hidden="{{current!=swiperlist.length-1}}">开始体验</view>
+  <view class="indicatorDots">
+    <block wx:for="{{swiperlist}}" wx:key="index">
+      <view class="indicatorDot {{index==current?'activeDot':''}}"></view>
+    </block>
+  </view>
+</view>

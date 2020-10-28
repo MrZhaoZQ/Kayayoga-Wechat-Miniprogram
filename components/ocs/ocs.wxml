@@ -1,0 +1,4 @@
+<!--components/ocs/ocs.wxml-->
+<view class="ocsBox" style="left:{{x}};top:{{y}};" capture-catch:touchmove="moveFn">
+  <button class="ocsBtn" open-type="contact" bindcontact="handleContactFn"></button>
+</view>

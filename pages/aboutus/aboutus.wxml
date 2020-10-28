@@ -1,0 +1,50 @@
+<!--pages/aboutus/aboutus.wxml-->
+<view class="container">
+  <image class="kv" mode="widthFix" src="https://api.maniyoga.fugumobile.cn/public/imgs/aboutus_kv.png"></image>
+  <view class="content">
+      <view class="introduction">
+      <text>MANIYOGA隶属于上海本德健身服务有限公司,公司从成立至今拥有多年的瑜伽培训经验，秉承一贯的“带领每一位热爱瑜伽之子， 从零起点成长为资深老师”的目标，以坚持以坚定严谨的体系化、传承化、科学化、应用化的办学思想，保持与时俱进，持续升级，以教育实用人才为中心，致力于培养出类拔萃的瑜伽教练，使学员通过培训毕业后，不仅具备过硬的瑜伽功底，还能具备扎实的实战技能、指导经验和独立授课的能力，能为自己的前途和就业开拓更宽的道路。
+      
+      我们拥有国内师资力量，导师都有着丰富的教学经验。师资力量和开阔的国际视野，保障了卓越的教学质量。拥有自己独到的教学体系，本着全面专业的理念，为社会培养和输送高质量、高技能的专业瑜伽人才。“为瑜伽健康事业培育专业的人才”，和学子一起开启瑜伽学习的智慧宝库，让瑜伽的智慧之光照亮瑜伽学子的瑜伽前进之路！这是我们永远努力不断的追求宗旨。</text>
+    </view>
+    <view class="addrList">
+      <view class="addrItem" wx:for="{{addrList}}" wx:key="index">
+        <text class="itemName">{{item.name}}</text>
+        <view class="itemInfo">
+          <image class="addrImg" src="../../imgs/address.png"></image>
+          <text selectable="{{selectable}}">{{item.addr}}</text>
+        </view>
+        <view class="itemInfo">
+          <image class="telImg" src="../../imgs/tel.png"></image>
+          <text selectable="{{selectable}}">{{item.tels}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="form">
+      <view class="subtitle">
+        <view class="line"></view>联系我们
+      </view>
+      <view class="formItem">
+        <view class="itemName">姓名</view>
+        <input value="{{fullname}}" bindinput="inputNameFn"></input>
+      </view>
+      <view class="formItem">
+        <view class="itemName">电话</view>
+        <input type="number" value="{{phone}}" bindinput="inputPhoneFn"></input>
+      </view>
+      <view class="formItem">
+        <view class="itemName">邮箱</view>
+        <input value="{{email}}" bindinput="inputEmailFn"></input>
+      </view>
+      <view class="formItem">
+        <view class="itemName">留言</view>
+        <textarea value="{{msg}}" bindinput="inputMsgFn"></textarea>
+      </view>
+      <view class="submit" bindtap="submitFn">提交</view>
+    </view>
+    <view class="footer">
+      <text>扫描二维码\r\n关注ManiYoga公众号</text>
+      <image bindlongpress="saveQRcodeFn" class="qrCode" src="https://api.maniyoga.fugumobile.cn/public/imgs/gzh.jpg"></image>
+    </view>
+  </view>
+</view>

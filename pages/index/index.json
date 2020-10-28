@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "landing": "../../components/landing/landing",
+    "ocs": "../../components/ocs/ocs"
+  }
+}

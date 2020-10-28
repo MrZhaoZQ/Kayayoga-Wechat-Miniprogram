@@ -1,0 +1,26 @@
+<!--pages/more/more.wxml-->
+<view class="container">
+  <view class="header">
+    <image bindtap="backFn" class="back" src="../../imgs/back.png"></image>
+    <image class="logo" mode="widthFix" src="../../imgs/newlogo.png"></image>
+  </view>
+  <view class="search" bindtap="toSearchFn"><image src="../../imgs/search.png"></image>搜索</view>
+  <view class="subtitle">
+    <view class="leftTxt"><view class="line"></view>{{listTitle}}</view>
+  </view>
+  <view class="moreList">
+    <view class="moreItem" wx:for="{{morelist}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+      <view class="imgBox">
+        <image lazy-load="true" src="{{item.avatar}}"></image>
+        <view hidden="{{!item.longinfo}}">{{item.longinfo}}</view>
+      </view>
+      <view class="infoBox">
+        <text class="itemName">{{item.name}}</text>
+        <text class="itemDesc">{{item.describe_content}}</text>
+        <view class="like" data-i="{{index}}" catchtap="likeFn">
+          <image src="{{item.isLike?'../../imgs/liked.png':'../../imgs/like.png'}}"></image>{{item.like_count}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+/* components/landing/landing.wxss */
+.landing{
+  width: 100%; height: 100%;
+  background: #000;
+  font-size: 28rpx;
+  position: fixed; left: 0; top: 0;
+  z-index: 888888;
+}
+
+.landing .theSwiper{
+  width: 100%; height: 1624rpx;
+}
+.landing .theSwiper .theSwiperItem{
+  width: 100%; height: 1624rpx;
+  padding: 0;
+  position: relative; left: 0; top: 0;
+}
+.landing .theSwiper .theSwiperItem .itemImg{
+  width: 750rpx; height: 1624rpx;
+  border-radius: 0;
+}
+.landing .theSwiper .theSwiperItem .layer{
+  width: 100%; height: 1624rpx;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute; left: 0; top: 0;
+  z-index: 666;
+}
+.landing .theSwiper .theSwiperItem .desc{
+  width: 526rpx;
+  position: absolute; left: 112rpx; top: 368rpx;
+  z-index: 666666;
+  font-size: 32rpx;
+  text-align: center;
+  color: #fff;
+}
+.landing .enterBtn{
+  width: 260rpx; height: 80rpx;
+  background: #17aebd;
+  border-radius: 46rpx; 
+  position: absolute; left: 245rpx; bottom: 368rpx;
+  z-index: 666666;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+}
+.landing .indicatorDots{
+  width: 100%; height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; left: 0; bottom: 268rpx;
+  z-index: 666666;
+}
+.landing .indicatorDots .indicatorDot{
+  width: 36rpx; height: 6rpx;
+  margin: 0 10rpx;
+  background: #c9c9c9;
+}
+.landing .indicatorDots .activeDot{
+  background: #17aebd;
+}

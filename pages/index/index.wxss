@@ -1,0 +1,387 @@
+/**index.wxss**/
+page{
+  background: #f4f4f4;
+}
+.container{
+  padding: 182rpx 0 68rpx;
+}
+
+.header{
+  width: 100%; height: 182rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed; left: 0; top: 0;
+  z-index: 26;
+}
+.header image{
+  width: 192rpx; height: auto;
+  margin-bottom: 30rpx;
+}
+.search{
+  width: 654rpx; height: 70rpx;
+  margin: 38rpx 48rpx 26rpx;
+  background: #fff;
+  border-radius: 48rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search image{
+  width: 42rpx; height: 42rpx;
+  padding: 0 30rpx;
+}
+.notify{
+  display: none;
+  width: 688rpx; height: 136rpx;
+  box-sizing: border-box;
+  margin: 0 auto 28rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 20rpx;
+  background: #1b242d;
+}
+.notify_show{
+  display: block;
+}
+.notify .notifyTitle{
+  width: 100%; height: 46rpx;
+  margin-bottom: 4rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative; left: 0; top: 0;
+  line-height: 46rpx;
+  font-weight: bolder;
+  color: #17aebd;
+}
+.notify .notifyTitle .notifyNum{
+  display: block;
+  width: 34rpx; height: 34rpx;
+  border-radius: 50%;
+  background: #fe0000;
+  position: absolute; left: 16rpx; top: -8rpx;
+  text-align: center;
+  line-height: 34rpx;
+  font-weight: bolder;
+  color: #fff;
+}
+.notify .notifyTitle image{
+  width: 30rpx; height: 36rpx;
+  margin-right: 26rpx;
+}
+.notify .swiperNotify{
+  width: 100%; height: 46rpx;
+}
+.notify .swiperNotify swiper-item{
+  width: 100%; height: 46rpx;
+  line-height: 46rpx;
+  font-size: 28rpx;
+  color: #fff;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.navBox{
+  width: 100%; height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBox .navlist{
+  width: auto; height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.navBox .navlist view{
+  width: 188rpx; height: 80rpx;
+  box-sizing: border-box;
+  border-bottom: 6rpx #f4f4f4 solid;
+  text-align: center;
+  line-height: 80rpx;
+}
+.navBox .navlist view.active{
+  border-bottom: 6rpx #000 solid;
+  font-weight: bolder;
+}
+.navBox image{
+  width: 90rpx; height: 51rpx;
+  margin-right: 40rpx;
+}
+
+.subtitle{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 68rpx 48rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subtitle .leftTxt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 48rpx;
+  font-weight: bolder;
+}
+.subtitle .leftTxt .line{
+  width: 10rpx; height: 52rpx;
+  margin-right: 10rpx;
+  background: #17aebd;
+}
+
+.section{
+  width: 100%; height: auto;
+}
+
+.list{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 48rpx;
+  padding-top: 20rpx;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.likelist{
+  padding-bottom: 20rpx;
+}
+.likelist .item{
+  width: 502rpx; height: 602rpx;
+  margin-right: 30rpx;
+}
+.likelist .item .itemBox{
+  width: 502rpx; height: 602rpx;
+  position: relative; left: 0; top: 0;
+  overflow: hidden;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 6rpx #d4d4d4;
+}
+.likelist .item .itemBox .itemImg{
+  /* width: 502rpx; */
+  width: 602rpx; height: 602rpx;
+  position: absolute; left: -50rpx; top: 0;
+}
+.likelist .item .itemBox .iconlive{
+  width: 60rpx; height: 27rpx;
+  padding: 22rpx;
+  position: absolute; right: 0; top: 0;
+}
+.likelist .item .itemBox .txtBox{
+  width: 502rpx;
+  box-sizing: border-box;
+  padding: 0 26rpx 18rpx;
+  position: absolute; left: 0; bottom: 0;
+  z-index: 56;
+  color: #fff;
+}
+.likelist .item .itemBox .txtBox text{
+  display: block;
+}
+.likelist .item .itemBox .txtBox .nameTxt{
+  margin-bottom: 10rpx;
+}
+.likelist .item .txtBox .itemBox .timeTxt{
+  margin-bottom: 20rpx;
+}
+.likelist .item .txtBox .itemBox text.nameTxt{
+  font-size: 36rpx;
+  font-weight: bolder;
+}
+
+.samelist .item{
+  width: 280rpx; height: auto;
+  margin-right: 24rpx;
+}
+.samelist .item .imgBox{
+  width: 280rpx; height: 280rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 6rpx #d4d4d4;
+  position: relative; left: 0; top: 0;
+}
+.samelist .item .imgBox image{
+  width: 280rpx; height: 280rpx;
+  border-radius: 20rpx;
+}
+.samelist .item .imgBox view{
+  width: 114rpx; height: 45rpx;
+  background: rgba(0,0,0,0.6);
+  border-radius: 26rpx;
+  position: absolute; right: 10rpx; bottom: 10rpx;
+  text-align: center;
+  line-height: 45rpx;
+  color: #fff;
+}
+.samelist .item .videoName{
+  width: 280rpx;
+  display: block;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.samelist .item .like{
+  width: 280rpx; height: 42rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 42rpx;
+}
+.samelist .item .like image{
+  width: 42rpx; height: 42rpx;
+}
+
+.swiperLiveEvt{
+  width: 100%; height: 726rpx;
+}
+.swiperLiveEvt swiper-item{
+  width: 100%; height: 726rpx;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+  position: relative; left: 0; top: 0;
+}
+.swiperLiveEvt swiper-item .swiperImgBox{
+  width: 656rpx; height: 656rpx;
+  padding: 20rpx 0;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; left: 0; top: 0;
+}
+.swiperLiveEvt swiper-item .swiperImgBox image{
+  width: 656rpx; height: 656rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 6rpx #d4d4d4;
+}
+.swiperLiveEvt swiper-item .swiperImgBox .layer{
+  width: 656rpx; height: 656rpx;
+  border-radius: 20rpx;
+  position: absolute; left: 0; top: 20rpx;
+  z-index: 66;
+  background: rgba(0, 0, 0, 0.4);
+}
+.swiperLiveEvt swiper-item .cont{
+  width: 656rpx;
+  padding-top: 68rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute; left: 48rpx; top: 0;
+  z-index: 88;
+  color: #fff;
+  font-size: 30rpx;
+}
+.swiperLiveEvt swiper-item .cont text{
+  display: block;
+}
+.swiperLiveEvt swiper-item .cont .date{
+  font-size: 88rpx;
+  line-height: 148rpx;
+}
+.swiperLiveEvt swiper-item .cont .time{
+  width: auto; height: 40rpx;
+  padding: 0 10rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+  color: #000;
+  line-height: 40rpx;
+}
+.swiperLiveEvt swiper-item .cont .titleTxt{
+  line-height: 54rpx;
+  font-size: 32rpx;
+  font-weight: bolder;
+}
+.swiperLiveEvt swiper-item .cont .master{
+  line-height: 54rpx;
+  font-weight: bolder;
+  font-size: 28rpx;
+}
+.swiperLiveEvt swiper-item .cont .num{
+  margin-bottom: 60rpx;
+  line-height: 54rpx;
+  font-size: 28rpx;
+}
+.swiperLiveEvt swiper-item .cont .joinBtn{
+  width: 260rpx; height: 86rpx;
+  border-radius: 43rpx;
+  background: #17aebd;
+  text-align: center;
+  line-height: 86rpx;
+  color: #fff;
+  font-weight: bolder;
+}
+.swiperLiveEvt swiper-item .countdown{
+  width: 656rpx; height: 106rpx;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 20rpx 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; left: 52rpx; top: 540rpx;
+}
+.swiperLiveEvt .wx-swiper-dot{
+  width: 36rpx; height: 6rpx;
+  border-radius: 0; 
+  margin-bottom: -16rpx;
+  background: #c9c9c9;
+}
+.swiperLiveEvt .wx-swiper-dot-active{
+  background: #17aebd;
+}
+
+.moreList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+}
+.moreItem{
+  width: 100%;
+  padding: 66rpx 0;
+  border-bottom: 1rpx #a0a0a0 solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.moreItem .imgBox{
+  width: 280rpx; height: 280rpx;
+  margin-right: 30rpx;
+  position: relative; left: 0; top: 0;
+}
+.moreItem .imgBox image{
+  width: 280rpx; height: 280rpx;
+  border-radius: 20rpx;
+}
+.moreItem .imgBox view{
+  width: 114rpx; height: 45rpx;
+  background: rgba(0,0,0,0.6);
+  border-radius: 26rpx;
+  position: absolute; right: 10rpx; bottom: 10rpx;
+  text-align: center;
+  line-height: 45rpx;
+  color: #fff;
+}
+.moreItem .infoBox{
+  flex: 1;
+  padding-top: 20rpx;
+}
+.moreItem .infoBox text{
+  display: block;
+  margin-bottom: 16rpx;
+  font-weight: bolder;
+}
+.moreItem .infoBox .like{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.moreItem .infoBox .like image{
+  width: 42rpx; height: 42rpx;
+}

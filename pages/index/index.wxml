@@ -1,0 +1,115 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="header">
+    <image mode="widthFix" src="../../imgs/newlogo.png"></image>
+  </view>
+  <view class="search" bindtap="toSearchFn"><image src="../../imgs/search.png"></image>搜索</view>
+  <view class="notify {{notifylist&&notifylist.length>0?'notify_show':''}}" bindtap="toEvtDetailFn">
+    <view class="notifyTitle">
+      <text class="notifyNum">{{notifylist.length}}</text>
+      <image src="../../imgs/notify.png"></image>
+      <text>你的即将开始的活动</text>
+    </view>
+    <swiper class="swiperNotify" vertical="{{vertical}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" current="{{currentN}}" bindchange="swiperNotifyChangeFn">
+      <swiper-item wx:for="{{notifylist}}" wx:key="index">{{item.start_time}} {{item.name}}</swiper-item>
+    </swiper>
+  </view>
+  <view class="navBox">
+    <view class="navlist">
+      <view wx:for="{{navlist}}" wx:key="index" id="{{index}}" class='{{activeIndex==index?"active":""}}' bindtap='navClickFn'>{{item}}</view>
+    </view>
+    <image bindtap="toFilterFn" src="../../imgs/more.png"></image>
+  </view>
+  <view class="section">
+    <view class="subtitle">
+      <view class="leftTxt"><view class="line"></view>推荐</view>
+    </view>
+    <view class="list likelist">
+      <view class="item" wx:for="{{likelist}}" wx:key="index" data-i="{{index}}" bindtap="likeClickFn">
+        <view class="itemBox">
+          <image class="itemImg" lazy-load="true" src="{{item.avatar}}"></image>
+          <!-- <image class="iconlive" src="../../imgs/live.png"></image> -->
+          <view class="txtBox">
+            <text class="nameTxt">{{item.name}}</text>
+            <view hidden="{{!item.time}}" class="timeTxt">{{item.time}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="subtitle">
+      <view class="leftTxt"><view class="line"></view>最新</view>
+      <view class="rightTxt" data-catId="3" bindtap="toMoreFn">查看全部</view>
+    </view>
+    <view class="list newlist samelist">
+      <view class="item" wx:for="{{newlist}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+        <view class="imgBox">
+          <image lazy-load="true" src="{{item.avatar}}"></image>
+          <view hidden="{{!item.longinfo}}">{{item.longinfo}}</view>
+        </view>
+        <text class="videoName">{{item.name}}</text>
+        <view class="like" data-i="{{index}}" data-list="new" catchtap="likeVideoFn">
+          <image src="{{item.isLike?'../../imgs/liked.png':'../../imgs/like.png'}}"></image>{{item.like_count}}
+        </view>
+      </view>
+    </view>
+    <view class="subtitle">
+      <view class="leftTxt"><view class="line"></view>大家都在看</view>
+      <view class="rightTxt" data-catId="4" bindtap="toMoreFn">查看全部</view>
+    </view>
+    <view class="list hotlist samelist">
+      <view class="item" wx:for="{{hotlist}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+        <view class="imgBox">
+          <image lazy-load="true" src="{{item.avatar}}"></image>
+          <view hidden="{{!item.longinfo}}">{{item.longinfo}}</view>
+        </view>
+        <text class="videoName">{{item.name}}</text>
+        <view class="like" data-i="{{index}}" data-list="hot" catchtap="likeVideoFn">
+          <image src="{{item.isLike?'../../imgs/liked.png':'../../imgs/like.png'}}"></image>{{item.like_count}}
+        </view>
+      </view>
+    </view>
+    <view class="subtitle" hidden="{{evtslist.length<1}}">
+      <view class="leftTxt"><view class="line"></view>现场活动</view>
+    </view>
+    <swiper hidden="{{evtslist.length<1}}" class="swiperLiveEvt" duration="{{duration}}" current="{{currentL}}" indicator-dots="{{indicatorDots}}" bindchange="swiperLiveEvtChangeFn">
+      <block wx:for="{{evtslist}}" wx:key="index">
+        <swiper-item>
+          <view class="swiperImgBox">
+            <image lazy-load="true" src="{{item.avatar}}" />
+            <view class="layer"></view>
+          </view>
+          <view class="cont">
+            <text class="date">{{item.date}}</text>
+            <text class="time">{{item.time}}</text>
+            <text class="titleTxt">{{item.name}}</text>
+            <text class="master">瑜伽大师：{{item.teacher_name}}</text>
+            <text class="num">{{item.totalUser}}人已预约</text>
+            <view class="joinBtn" data-id="{{item.id}}" bindtap="joinFn">立刻加入</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="subtitle">
+      <view class="leftTxt"><view class="line"></view>进阶课程</view>
+      <view class="rightTxt" data-catId="5" bindtap="toMoreFn">查看全部</view>
+    </view>
+    <view class="list advanced samelist">
+      <view class="item" wx:for="{{advanced}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+        <view class="imgBox">
+          <image lazy-load="true" src="{{item.avatar}}"></image>
+          <view hidden="{{!item.longinfo}}">{{item.longinfo}}</view>
+        </view>
+        <text class="videoName">{{item.name}}</text>
+        <view class="like" data-i="{{index}}" data-list="advanced" catchtap="likeVideoFn">
+          <image src="{{item.isLike?'../../imgs/liked.png':'../../imgs/like.png'}}"></image>{{item.like_count}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义组件landing -->
+<landing landing-hidden="{{is_landing_hidden}}" />
+
+<!-- 自定义组件online customer service -->
+<ocs page-name="index"/>

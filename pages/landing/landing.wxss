@@ -1,0 +1,39 @@
+/* pages/landing/landing.wxss */
+.container{
+  background: #e6e6e6;
+  font-size: 28rpx;
+}
+
+swiper{
+  width: 100%; height: 1624rpx;
+}
+swiper swiper-item{
+  width: 100%; height: 1624rpx;
+  position: relative; left: 0; top: 0;
+}
+swiper swiper-item image{
+  width: 750rpx; height: 1624rpx;
+}
+swiper swiper-item text{
+  width: 600rpx;
+  position: absolute; left: 75rpx; top: 500rpx;
+  text-align: center;
+  color: #fff;
+}
+swiper swiper-item .enterBtn{
+  width: 200rpx; height: 80rpx;
+  position: absolute; left: 275rpx; bottom: 536rpx;
+  z-index: 666666;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+}
+swiper .wx-swiper-dot{
+  width: 36rpx; height: 6rpx;
+  border-radius: 0; 
+  margin-bottom: 468rpx;
+  background: #c9c9c9;
+}
+swiper .wx-swiper-dot-active{
+  background: #17aebd;
+}

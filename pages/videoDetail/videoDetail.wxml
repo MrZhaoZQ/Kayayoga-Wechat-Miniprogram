@@ -1,0 +1,87 @@
+<!--pages/videoDetail/videoDetail.wxml-->
+<view class="container">
+  <image hidden="{{released==1}}" class="videoPoster" mode="widthFix" src="{{vInfo.avatar}}"></image>
+  <view hidden="{{released==0}}" class="videoBox">
+    <video id="video" src="{{vInfo.file?vInfo.file:vInfo.file_short}}" controls="{{controls}}" poster="https://api.maniyoga.fugumobile.cn/public/imgs/mask.png" show-center-play-btn="{{showCenterPlayBtn}}" enable-play-gesture="{{gesture}}" vslide-gesture="{{gesture}}" show-fullscreen-btn="{{showFullscreenBtn}}" bindplay="playingFn" bindpause="pauseFn" bindended="endedFn"></video>
+    <image class="playBtn" hidden="{{playing}}" bindtap="playBtnFn" src="../../imgs/playBtn.png"></image>
+    <view class="numBox" style="display: {{playing?'none':'flex'}}">
+        <image src="../../imgs/views.png"></image><text class="views">{{vInfo.play_count}}</text>
+        <image src="../../imgs/likes.png"></image><text class="likes">{{vInfo.like_count}}</text>
+    </view>
+  </view>
+  <view class="subtitle">
+    <view class="leftTxt"><view class="line"></view>{{vInfo.name}}</view>
+    <view class="evtPriceBox" hidden="{{vInfo.isPurchase}}" bindtap="buyFn">
+      <!-- <image src="../../imgs/price.png"></image> -->
+      <image src="../../imgs/buynow.png"></image>
+      <view>{{vInfo.price>0?'￥'+vInfo.price:'免费'}}</view>
+    </view>
+  </view>
+  <view class="timeBox">
+    <view class="timeInfo">
+      <view class="length"><image src="../../imgs/length.png"></image>{{vInfo.longinfo}}</view>
+      <view class="uploadTime"><image src="../../imgs/upload.png"></image>{{vInfo.updatetime}}</view>
+    </view>
+    <image class="collet" bindtap="colletFn" src="{{vInfo.isCollection?'../../imgs/collected.png':'../../imgs/uncollected.png'}}"></image>
+  </view>
+  <view class="videoTxt">
+    <text>{{vInfo.describe_content}}</text>
+  </view>
+  <view class="masterInfo" bindtap="toMasterFn">
+    <image class="masterAvatar" src="{{mInfo.avatar}}"></image>
+    <view class="master">
+      <view class="masterName">{{mInfo.name}}<image mode="widthFix" src="../../imgs/arr_right.png"></image></view>
+      <text class="masterTag">{{mInfo.title}}</text>
+    </view>
+  </view>
+  <view class="masterTxt">
+    <view class="cont">
+      <text class="intro">{{mInfo.introduce_content}}</text>
+      <text class="more" bindtap="toMasterFn">更多 +</text>
+    </view>
+  </view>
+  <view class="subtitle recommTitle">
+    <view class="leftTxt"><view class="line"></view>为你推荐</view>
+    <view class="rightTxt" bindtap="toMoreFn">查看全部</view>
+  </view>
+  <view class="recommlist">
+    <view class="item" wx:for="{{recommlist}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+      <view class="imgBox">
+        <image src="{{item.avatar}}"></image>
+        <text>{{item.longinfo}}</text>
+      </view>
+      <text class="videoName">{{item.name}}</text>
+      <view class="like" data-i="{{index}}" catchtap="likeVofListFn">
+        <image src="{{item.isLike?'../../imgs/liked.png':'../../imgs/like.png'}}"></image>{{item.like_count}}
+      </view>
+      <!-- <view class="like"><image src="../../imgs/like.png"></image>{{item.like_count}}</view> -->
+    </view>
+  </view>
+
+  <view class="fixedBtm" hidden="{{released==0}}">
+    <view class="navBox">
+      <image bindtap="toHomeFn" src="../../imgs/ihome.png"></image>
+      <image bindtap="likeFn" src="{{vInfo.isLike?'../../imgs/ilike1.png':'../../imgs/ilike0.png'}}"></image>
+      <image bindtap="showSharePopupFn" src="../../imgs/ishare.png"></image>
+    </view>
+    <view class="btmPlayBtn" bindtap="playBtnFn">{{playing?'暂停':'播放'}}</view>
+  </view>
+
+  <view class="sharePopup" hidden="{{!showSharePopup}}" capture-bind:tap="hideSharePopupFn">
+    <view class="shareBtns">
+      <button open-type="share">分享给朋友</button>
+      <view bindtap="showPosterFn">保存二维码图片</view>
+      <view class="cancel" bindtap="hideSharePopupFn">取消</view>
+    </view>
+  </view>
+
+  <view class="posterPopup" hidden="{{!showPoster}}">
+    <image class="close" bindtap="hidePosterFn" src="../../imgs/close.svg"></image>
+    <view class="canvasBox">
+      <canvas id="poster" canvas-id="poster" bindlongpress='save2AlbumFn'></canvas>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义组件authorize -->
+<authorize bind:myevent="onMyEvent" authorize-hidden="{{is_authorize_hidden}}" from-page="{{page_name}}" />

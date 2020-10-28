@@ -1,0 +1,14 @@
+<!--pages/filter/filter.wxml-->
+<view class="container">
+  <view class="search" bindtap="toSearchFn"><image src="../../imgs/search.png"></image>搜索</view>
+  <view class="section" wx:for="{{list}}" wx:for-item="childlist" wx:for-index="idx" wx:key="idx" >
+    <view class="subtitle">
+      <view class="leftTxt"><view class="line"></view>{{itemNames[idx]}}</view>
+    </view>
+    <view class="cateList">
+      <text wx:for="{{childlist}}" wx:key="index" data-i="{{index}}" data-idx="{{idx}}" bindtap="toMoreFn">{{item.name}}</text>
+    </view>
+  </view>
+
+</view>
+

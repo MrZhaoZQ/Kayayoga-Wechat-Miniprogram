@@ -1,0 +1,17 @@
+<!--pages/landing/landing.wxml-->
+<view class='container'>
+  <swiper indicator-dots="{{indicatorDots}}" 
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}" 
+    current="{{current}}" 
+    bindchange="swiperChangeFn">
+    <block wx:for="{{swiperlist}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.img}}" />
+        <text>{{item.txt}}</text>
+        <view class="enterBtn" bindtap="enterFn" wx:if="{{index == 3}}">Enter</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

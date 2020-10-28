@@ -1,0 +1,63 @@
+<!--pages/liveEvts/liveEvts.wxml-->
+<view class="container">
+  <view class="search" bindtap="toSearchFn"><image src="../../imgs/search.png"></image>搜索</view>
+  <view hidden="{{evtlist.length>0}}" class="noEvts">更多精彩，敬请期待...</view>
+  <view class="subtitle" hidden="{{swiperlist.length<1}}">
+    <view class="leftTxt"><view class="line"></view>即将举办的活动</view>
+  </view>
+  <swiper hidden="{{swiperlist.length<1}}" indicator-dots="{{swiperlist.length>1}}" 
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}" 
+    current="{{current}}" 
+    bindchange="swiperChangeFn">
+    <block wx:for="{{swiperlist}}" wx:key="index">
+      <swiper-item>
+        <view class="swiperImgBox">
+          <image src="{{item.avatar}}" />
+          <view class="layer"></view>
+        </view>
+        <view class="cont">
+          <text class="date">{{item.date}}</text>
+          <text class="time">{{item.time}}</text>
+          <text class="titleTxt">{{item.name}}</text>
+          <text class="master">瑜伽大师：{{item.teacher_name}}</text>
+          <text class="num">{{item.totalUser}}人已预约</text>
+          <view class="joinBtn" data-id="{{item.id}}" bindtap="joinFn">立刻加入</view>
+        </view>
+        <view class="itemBtm">
+          <view class="countdown">
+            <text>{{countdown[index].days}}</text>天
+            <text>{{countdown[index].hours}}</text>小时
+            <text>{{countdown[index].mins}}</text>分钟
+          </view>
+          <view class="remindBtn" data-id="{{item.id}}" bindtap="subscribeFn">
+            <image src="../../imgs/remind.png"></image>
+            <text>提醒我</text>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="subtitle" hidden="{{evtlist.length<1}}">
+    <view class="leftTxt"><view class="line"></view>活动日历</view>
+    <picker bindchange="bindPickerChangeFn" value="{{selectedIndex}}" range="{{selectlist}}">
+      <view class="picker">
+        <text>{{selectlist[selectedIndex]}}</text>
+        <image src="../../imgs/select.png"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="evtsList" hidden="{{evtlist.length<1}}">
+    <view class="evtsItem" wx:for="{{evtlist}}" wx:key="index" data-id="{{item.id}}" bindtap="joinFn">
+      <image lazy-load="true" src="{{item.avatar}}"></image>
+      <view class="rightCont">
+        <text class="evtsTitle">{{item.name}}</text>
+        <text class="master">瑜伽大师：{{item.teacher_name}}</text>
+        <text class="date">{{item.start_dt}}</text>
+        <text class="time">{{item.time}}</text>
+        <text class="price">￥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

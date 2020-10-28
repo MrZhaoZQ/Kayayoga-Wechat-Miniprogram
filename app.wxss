@@ -1,0 +1,27 @@
+/**app.wxss**/
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+button::after {
+  border: none;
+}
+button{
+  margin: 0;
+  padding: 0;
+  border-radius:0;
+  background-color: transparent;
+  color: inherit;
+}
+.button-hover{
+  background-color: transparent;
+  color: inherit;
+}
+image{
+  display: block;
+}
+page{
+  font-size: 28rpx;
+}

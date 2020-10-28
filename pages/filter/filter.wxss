@@ -1,0 +1,63 @@
+/* pages/filter/filter.wxss */
+.container{
+  padding-bottom: 68rpx;
+}
+
+.search{
+  width: 654rpx; height: 70rpx;
+  margin: 38rpx 48rpx 0rpx;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 48rpx;
+  border: 1px #ccc solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search image{
+  width: 42rpx; height: 42rpx;
+  padding: 0 30rpx;
+}
+
+.section{
+  width: 100%;
+}
+.subtitle{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 68rpx 48rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subtitle .leftTxt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 48rpx;
+  font-weight: bolder;
+}
+.subtitle .leftTxt .line{
+  width: 10rpx; height: 52rpx;
+  margin-right: 10rpx;
+  background: #17aebd;
+}
+.cateList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.cateList text{
+  display: block;
+  width: auto; height: 75rpx;
+  margin: 0 15rpx 30rpx 0;
+  padding: 0 40rpx;
+  border-radius: 36rpx;
+  background: #f4f4f4;
+  text-align: center;
+  line-height: 75rpx;
+}

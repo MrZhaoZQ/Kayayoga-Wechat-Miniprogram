@@ -1,0 +1,219 @@
+/* pages/membership/membership.wxss */
+page{
+  background: #f4f4f4;
+}
+.container{
+  padding-bottom: 68rpx;
+}
+
+.tabbars{
+  width: 100%; height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tabbars view{
+  flex: 1;
+  height: 80rpx;
+  box-sizing: border-box;
+  border-bottom: 6rpx #f4f4f4 solid;
+  text-align: center;
+  line-height: 80rpx;
+}
+.tabbars view.active{
+  border-bottom: 6rpx #000 solid;
+  font-weight: bolder;
+}
+
+.vipList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+}
+.vipItem{
+  width: 100%;
+  padding: 66rpx 0;
+  border-bottom: 1rpx #a0a0a0 solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.vipItem .imgBox{
+  width: 280rpx; height: 280rpx;
+  margin-right: 30rpx;
+  position: relative; left: 0; top: 0;
+}
+.vipItem .imgBox image{
+  width: 280rpx; height: 280rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 6rpx #d4d4d4;
+}
+.vipItem .infoBox{
+  flex: 1;
+  height: 280rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 20rpx 0 10rpx;
+}
+.vipItem .infoBox .itemName{
+  display: block;
+  margin-bottom: 16rpx;
+  font-weight: bolder;
+}
+.vipItem .infoBox .itemDesc{
+  display: block;
+  margin-bottom: 16rpx;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.vipItem .infoBox .btmBox{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.vipItem .infoBox .btmBox .price{
+  font-weight: bolder;
+  font-size: 32rpx;
+}
+.vipItem .infoBox .btmBox image{
+  width: 75rpx; height: 75rpx;
+}
+
+.recordList{
+  width: 100%;
+  background: #ececec;
+}
+.recordList .myacount{
+  width: 100%; height: auto;
+  box-sizing: border-box;
+  padding: 32rpx;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30rpx;
+}
+.recordList .myacount .avatar{
+  width: 180rpx; height: 180rpx;
+  margin-right: 28rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.recordList .myacount .acountInfo{
+  flex: 1;
+}
+.recordList .myacount .acountInfo .acount, .recordList .myacount .acountInfo .phone{
+  width: 100%; height: 56rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bolder;
+  line-height: 56rpx;
+}
+.recordList .myacount .acountInfo .acount{
+  margin-bottom: 0rpx;
+}
+.recordList .myacount .acountInfo .acount text, .recordList .myacount .acountInfo .phone text{
+  color: #17aebd;
+  font-weight: normal;
+}
+.recordList .myacount .acountInfo .acount .acountNum{
+  font-size: 34rpx;
+  font-weight: bolder;
+}
+.recordList .myacount button{
+  width: 246rpx;
+  margin: 0;
+  padding: 0 20rpx;
+  border: 2rpx #17aebd solid;
+  border-radius: 3rpx;
+  color: #17aebd;
+  font-weight: normal;
+  font-size: 26rpx;
+  line-height: 56rpx;
+}
+.recordList .myacount .unbind{
+  width: auto;
+  margin-left: 28rpx;
+  padding: 0 20rpx;
+  border: 2rpx #17aebd solid;
+  border-radius: 3rpx;
+  color: #17aebd;
+  font-weight: normal;
+  font-size: 26rpx;
+  line-height: 46rpx;
+}
+.subtitle{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 68rpx 46rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subtitle .leftTxt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 48rpx;
+  font-weight: bolder;
+}
+.subtitle .leftTxt .line{
+  width: 10rpx; height: 52rpx;
+  margin-right: 10rpx;
+  background: #17aebd;
+}
+.recordItem{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 56rpx 46rpx;
+  border-bottom: 1rpx #a0a0a0 solid;
+}
+.recordItem .record{
+  width: 100%;
+  margin-bottom: 36rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.recordItem .record .imgBox{
+  width: 160rpx; height: 160rpx;
+  margin-right: 30rpx;
+}
+.recordItem .record .imgBox image{
+  width: 160rpx; height: 160rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 6rpx #d4d4d4;
+}
+.recordItem .record .infoBox{
+  flex: 1;
+  height: 160rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recordItem .record .infoBox .desc{
+  display: block;
+  width: 316rpx;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.recordItem .record .infoBox .price{
+  /* font-weight: bolder; */
+  font-size: 30rpx;
+}
+.recordItem .itemDate{
+  width: 100%;
+  line-height: 36rpx;
+  color: #aaa;
+}

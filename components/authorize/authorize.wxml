@@ -1,0 +1,9 @@
+<!--components/authorize/authorize.wxml-->
+<view class='authorizeBox' hidden='{{authorizeHidden}}'>
+  <view class='content'>
+    <view class='subtitle'>需要您的授权</view>
+    <view class='desc'>请在稍后的提示框中点击“允许”</view>
+    <image class='tipImg' src='https://api.maniyoga.fugumobile.cn/public/imgs/authorize.jpg'></image>
+    <button class='btn' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">我知道了</button>
+  </view>
+</view>

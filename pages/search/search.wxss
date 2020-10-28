@@ -1,0 +1,139 @@
+/* pages/search/search.wxss */
+
+.search{
+  width: 100%; height: 120rpx;
+  box-sizing: border-box;
+  padding: 36rpx 48rpx;
+  border-bottom: 1rpx #ccc solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search image{
+  width: 42rpx; height: 42rpx;
+  /* margin-right: 36rpx; */
+}
+.search input{
+  flex: 1;
+}
+
+.searchTip{
+  width: 100%; height: 668rpx;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+  position: fixed; left: 0; top: 120rpx;
+  z-index: 56;
+}
+.searchTip .tipKeyword{
+  width: 100%; height: 120rpx;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+  border-bottom: 1rpx #ccc solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sec{
+  width: 100%;
+}
+.subtitle{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 68rpx 48rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subtitle .leftTxt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 48rpx;
+  font-weight: bolder;
+}
+.subtitle .leftTxt .line{
+  width: 10rpx; height: 52rpx;
+  margin-right: 10rpx;
+  background: #17aebd;
+}
+
+.resultList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+}
+.resultItem{
+  width: 100%;
+  padding: 66rpx 0;
+  border-bottom: 1rpx #a0a0a0 solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.resultItem .imgBox{
+  width: 280rpx; height: 280rpx;
+  margin-right: 30rpx;
+  position: relative; left: 0; top: 0;
+}
+.resultItem .imgBox image{
+  width: 280rpx; height: 280rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 6rpx #d4d4d4;
+}
+.resultItem .imgBox view{
+  width: 114rpx; height: 45rpx;
+  background: rgba(0,0,0,0.6);
+  border-radius: 26rpx;
+  position: absolute; right: 10rpx; bottom: 10rpx;
+  text-align: center;
+  line-height: 45rpx;
+  color: #fff;
+}
+.resultItem .infoBox{
+  flex: 1;
+  padding-top: 20rpx;
+}
+.resultItem .infoBox .itemName{
+  display: block;
+  margin-bottom: 16rpx;
+  font-weight: bolder;
+}
+.resultItem .infoBox .itemDesc{
+  display: block;
+  margin-bottom: 16rpx;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.resultItem .infoBox .like{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.resultItem .infoBox .like image{
+  width: 42rpx; height: 42rpx;
+}
+
+.hotKeywordList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.hotKeywordList text{
+  display: block;
+  width: auto; height: 75rpx;
+  margin: 0 15rpx 30rpx 0;
+  padding: 0 40rpx;
+  border-radius: 36rpx;
+  background: #f4f4f4;
+  text-align: center;
+  line-height: 75rpx;
+}

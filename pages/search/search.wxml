@@ -1,0 +1,41 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+  <view class="search">
+    <input type="text" name="search" comfirm-type="search" placeholder="搜索" value="{{keyword}}" bindinput="inputFn" bindconfirm="comfirmFn"></input>
+    <image bindtap="searchBtnFn" src="../../imgs/search.png"></image>
+  </view>
+  <view class="searchTip" hidden="{{tipKeywordlist.length<1}}">
+    <view class="tipKeyword" wx:for="{{tipKeywordlist}}" wx:key="index" data-i="{{index}}" bindtap="searchTipKeywordFn">{{item}}</view>
+  </view>
+  <!-- search result -->
+  <view class="sec result" hidden="{{!searched}}">
+    <view class="subtitle">
+      <view class="leftTxt"><view class="line"></view>搜索结果</view>
+      <view class="rightTxt">({{reslength}}{{released==1?'视频':''}})</view>
+    </view>
+    <view class="resultList">
+      <view class="resultItem" wx:for="{{reslist}}" wx:key="index" data-id="{{item.id}}" bindtap="toVideoDetailFn">
+        <view class="imgBox">
+          <image lazy-load="true" src="{{item.avatar}}"></image>
+          <view hidden="{{!item.longinfo}}">{{item.longinfo}}</view>
+        </view>
+        <view class="infoBox">
+          <text class="itemName">{{item.name}}</text>
+          <text class="itemDesc">{{item.describe_content}}</text>
+          <view class="like" data-i="{{index}}" catchtap="likeFn">
+            <image src="{{item.isLike?'../../imgs/liked.png':'../../imgs/like.png'}}"></image>{{item.like_count}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- hot search keyword -->
+  <view class="sec hotKeyword">
+    <view class="subtitle">
+      <view class="leftTxt"><view class="line"></view>热门搜索</view>
+    </view>
+    <view class="hotKeywordList">
+      <text wx:for="{{hotlist}}" wx:key="index" data-i="{{index}}" bindtap="searchHotKeywordFn">{{item.name}}</text>
+    </view>
+  </view>
+</view>

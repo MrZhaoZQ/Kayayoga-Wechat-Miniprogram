@@ -1,0 +1,281 @@
+/* pages/evtDetail/evtDetail.wxss */
+page{
+  background: #f4f4f4;
+}
+.container{
+  padding-bottom: 168rpx;
+}
+
+.kvBox{
+  width: 750rpx; height: 430rpx;
+  position: relative; left: 0; top: 0;
+  overflow: hidden;
+}
+.kvBox .kvImg{
+  width: 750rpx; height: auto;
+  position: absolute; left: 0; top: -110rpx;
+  z-index: 16;
+}
+.kvBox .kvCbox{
+  width: 100%; height: 340rpx;
+  position: absolute; left: 0; top: 0;
+  z-index: 18;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kvBox .kvCbox image{
+  width: 113rpx; height: 51rpx;
+  margin-bottom: 36rpx;
+}
+.kvBox .kvCbox view{
+  width: 256rpx; height: 40rpx;
+  border-radius: 20rpx;
+  background: #17aebd;
+  color: #fff;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.kvBox .evtTips{
+  width: 100%; height: 90rpx;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute; left: 0; bottom: 0;
+  z-index: 18;
+  line-height: 90rpx;
+  color: #9c9c9c;
+}
+.kvBox .evtTips .countdown{
+  width: 100%; height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+.kvBox .evtTips .timer, .kvBox .evtTips .ended{
+  width: 100%; height: 90rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+.kvBox .evtTips .countdown text, .kvBox .evtTips .timer text{
+  margin: 0 10rpx;
+  font-size: 32rpx;
+  color: #17aebd;
+}
+
+.subtitle{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 68rpx 48rpx 0rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; left: 0; top: 0;
+}
+.subtitle .leftTxt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 48rpx;
+  font-weight: bolder;
+}
+.subtitle .leftTxt .line{
+  width: 10rpx; height: 52rpx;
+  margin-right: 10rpx;
+  background: #17aebd;
+}
+.subtitle .evtPriceBox{
+  width: 146rpx; height: 120rpx;
+  position: absolute; right: 26rpx; top: -10rpx;
+  z-index: 18;
+}
+.subtitle .evtPriceBox image{
+  width: 146rpx; height: 120rpx;
+}
+.subtitle .evtPriceBox view{
+  width: 130rpx; height: 66rpx;
+  position: absolute; left: 0; top: 32rpx;
+  text-align: center;
+  line-height: 66rpx;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 30rpx;
+  z-index: 22;
+}
+
+.subtitle .evtBtn{
+  width: 146rpx; height: 120rpx;
+  position: absolute; right: 26rpx; top: -10rpx;
+  z-index: 18;
+}
+
+.evtTxt{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 48rpx;
+}
+.evtTxt text{
+  display: block;
+  width: 100%;
+}
+
+.masterInfo{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 48rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.masterInfo .masterAvatar{
+  width: 121rpx; height: 121rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.masterInfo .master{
+  flex: 1;
+}
+.masterInfo .master text{
+  display: block;
+}
+.masterInfo .master .masterName{
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: bolder;
+}
+.masterInfo .master .masterName image{
+  width: 14rpx; height: auto;
+  margin: 6rpx 0 0 14rpx;
+}
+.masterTxt{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.masterTxt .cont{
+  width: 100%;
+  padding: 30rpx 50rpx;
+  border-radius: 20rpx;
+  background: #fff;
+}
+.masterTxt .cont text{
+  display: block;
+  width: 100%;
+}
+.masterTxt .cont .intro{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.masterTxt .cont .more{
+  margin: 20px 0;
+}
+
+.fixedBtm{
+  width: 100%; height: 162rpx;
+  box-sizing: border-box;
+  padding: 0 48rpx 26rpx 12rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; left: 0; bottom: 0;
+}
+.fixedBtm .navBox{
+  width: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fixedBtm .navBox image{
+  width: 55rpx; height: 55rpx;
+  padding: 20rpx 36rpx;
+}
+.fixedBtm .navBox button{
+  width: 127rpx; height: 95rpx;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  font-size: 30rpx;
+}
+.fixedBtm .btmBtn{
+  width: 257rpx; height: 86rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+
+.sharePopup{
+  width: 100%; height: 100%;
+  position: fixed; left: 0; top: 0;
+  z-index: 66;
+  background: rgba(0,0,0,0.6);
+}
+.sharePopup .shareBtns{
+  width: 100%; height: auto;
+  background: #f4f4f4;
+  position: absolute; left: 0; bottom: 0;
+}
+.sharePopup .shareBtns button{
+  width: 100%; height: 100rpx;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border-bottom: 1rpx #ccc solid;
+  background: #fff;
+  font-weight: normal;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.sharePopup .shareBtns view{
+  width: 100%; height: 100rpx;
+  border-bottom: 1rpx #ccc solid;
+  background: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.sharePopup .shareBtns view.cancel{
+  margin-top: 20rpx;
+  border-top: 1rpx #ccc solid;
+  border-bottom: none;
+}
+
+.posterPopup{
+  width: 100%; height: 100%;
+  position: fixed; left: 0; top: 0;
+  z-index: 68;
+  background: rgba(0,0,0,0.6);
+}
+.posterPopup .close{
+  width: 36rpx; height: 36rpx;
+  padding: 20rpx;
+  position: absolute; right: 40rpx; top: 0;
+}
+.posterPopup .canvasBox{
+  width: 630rpx; height: 1080rpx;
+  background: #fff;
+  position: absolute; left: 60rpx; top: 76rpx;
+}
+#poster{
+  width: 630rpx; height: 1080rpx;
+}
